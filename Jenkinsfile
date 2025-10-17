@@ -1,22 +1,28 @@
-pipeline{
-    stages{
-        stage('Pipeline test'){
-            steps{
-                echo('Pipeline running !!')
+pipeline {
+    agent any
+    stages {
+        stage('Test Connection') {
+            steps {
+                echo ':white_tick: Jenkins Pipeline Triggered Successfully!'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
-        stage('Pipeline triggred'){
-            step{
-                echo('Pipeline triggred !!')
+        stage('Dummy Build') {
+            steps {
+                echo ':rocket: Simulating build process...'
+                sh 'echo "Building frontend..."'
+                sh 'sleep 5'
+                echo ':tada: Build complete!'
             }
         }
     }
-    post{
-        success{
-            echo('Pipeline completed !')
+    post {
+        success {
+            echo ':white_tick: Pipeline executed successfully!'
         }
-        failure{
-            echo('Pipeline failed !!')
+        failure {
+            echo ':x: Pipeline failed!'
         }
     }
 }

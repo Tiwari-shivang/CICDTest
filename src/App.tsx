@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    Jenkins syntax is correct
+    Jenkins syntax is correct now 
     </>
   )
 }

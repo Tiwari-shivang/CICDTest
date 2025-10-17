@@ -5,7 +5,7 @@ pipeline{
                 echo('Pipeline running !!')
             }
         }
-        state('Pipeline triggred'){
+        stage('Pipeline triggred'){
             step{
                 echo('Pipeline triggred !!')
             }
